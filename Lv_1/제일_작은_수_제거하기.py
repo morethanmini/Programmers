@@ -1,9 +1,9 @@
-def solution(arr):
+arr = [10]
 
-    if len(arr) == 1:
-        arr = []
-        arr.append(-1)
-    else:
-        arr.remove(min(arr))
+if len(arr) == 1:
+    arr.append(-1)
 
-    return arr
+else:
+    arr.remove(min(arr))
+
+print(arr)
