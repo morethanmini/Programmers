@@ -1,29 +1,10 @@
-n = int(input())
-count = 0
-
-for i in range(1, n+1):
-    if i == 1:
-        continue
-
-    for j in range(2, int(i ** 0.5) + 1):
-        if i % j == 0:
-            break
-    else:
-        count += 1
-
-print(count)
-
 def solution(n):
-    count = 0
+    num = set(range(2, n + 1))
 
-    for i in range(1, n + 1):
-        if i == 1:
-            continue
+    for i in range(2, n + 1):
+        if i in num:
+            num -= set(range(2 * i, n + 1, i))
 
-        for j in range(2, int(i ** 0.5) + 1):
-            if i % j == 0:
-                break
-        else:
-            count += 1
+    return len(num)
 
-        return count
+print(solution(10))
