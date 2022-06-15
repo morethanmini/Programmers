@@ -1,6 +1,11 @@
-arr = []
+participant = ["leo", "kiki", "eden"]
+completion = ["eden", "kiki"]
 
-for i in range(1, 5):
-    arr.append(i)
+participant.sort()
+completion.sort()
+print(participant, completion)
+for i in range(len(completion)):
+    if participant[i] != completion[i]:
+        print(participant[i])
 
-print(arr)
+print(participant[-1])
