@@ -1,11 +1,18 @@
-participant = ["leo", "kiki", "eden"]
-completion = ["eden", "kiki"]
+from itertools import combinations
 
-participant.sort()
-completion.sort()
-print(participant, completion)
-for i in range(len(completion)):
-    if participant[i] != completion[i]:
-        print(participant[i])
+def check(a, b, c):
+    total = a + b + c
+    for i in range(2, total):
+        if total % i == 0 :
+            return False
+    return True
 
-print(participant[-1])
+data = [1, 2, 3, 4]
+result = list(combinations(data, 3))
+answer = 0
+
+for i in result:
+    if check(i[0], i[1], i[2]):
+        answer += 1
+
+print(answer)
