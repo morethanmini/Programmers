@@ -1,18 +1,10 @@
-from itertools import combinations
+def solution(n):
+    answer = []
 
-def check(a, b, c):
-    total = a + b + c
-    for i in range(2, total):
-        if total % i == 0 :
-            return False
-    return True
+    for i in range(len(n)):
+        for j in range(i+1, len(n)):
+            answer.append(n[i] + n[j])
 
-data = [1, 2, 3, 4]
-result = list(combinations(data, 3))
-answer = 0
+    return sorted(list(set(answer)))
 
-for i in result:
-    if check(i[0], i[1], i[2]):
-        answer += 1
-
-print(answer)
+print(solution([2, 1, 3, 4, 1]))
